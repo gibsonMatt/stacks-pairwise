@@ -9,7 +9,7 @@ HERE = pathlib.Path(__file__).parent
 README = (HERE / "README.md").read_text()
 
 # specify requirements of your package here
-REQUIREMENTS = ['biopython']
+REQUIREMENTS = ['biopython', 'numpy', 'pandas']
 
 setup(name='stacksPairwise',
       version='0.0.0',
