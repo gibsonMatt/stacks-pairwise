@@ -1,6 +1,8 @@
 # stacksPairwise
 
-Properly calculate pairwise sequence divergence between samples from [Stacks](http://catchenlab.life.illinois.edu/stacks/) RAD genotyping output. Simply supply the path to a `samples.fa` file generated from a Stacks run and a text file with individuals to calculate divergence between. By default all pairwise comparisons are made.
+Calculate pairwise sequence divergence between samples from [Stacks](http://catchenlab.life.illinois.edu/stacks/) RAD genotyping output. Simply supply the path to a `samples.fa` file generated from a Stacks run and a text file with individuals to calculate divergence between. By default all pairwise comparisons are made.
+
+Calculating pairwise sequence divergence across the genome from a vcf file output from Stacks (e.g., using vcftools --windowed-pi) will ignore invariant sites and lead to overestimation of the levels of segregating nucleotide diversity. Instead, it is more appropriate to calculate this on a "per-RADtag" basis. 
 
 ## Requirements
 
@@ -20,8 +22,8 @@ python setup.py install
 ```
 usage: stacksPairwise [-h] [-v] [-o] individuals samples
 
-Calculate pairwise divergence (pairwise pi) from Stacks `samples.fa` output
-fle
+Calculate pairwise sequence divergence (pairwise pi) from Stacks `samples.fa` output
+file
 
 positional arguments:
   individuals        Path to text file containing focal samples to compare
